@@ -13,6 +13,10 @@ const app = express();
 app.use(morgan("dev"));
 app.use(bodyParser.json());
 app.use("/users", userRoutes);
+app.use("/", (req, res, next) => {
+  res.send("Backend Running");
+});
+
 //SERVER
 app.listen(3000, () => {
   console.log("listening on port 3000");
