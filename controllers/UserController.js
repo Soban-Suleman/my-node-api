@@ -76,7 +76,7 @@ exports.updateUser = async (req, res) => {
       });
     } else {
       await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
-      res.json({ status: "Success", message: "User Updated" });
+      res.json({ status: "Success", message: "User Updated Succesfully" });
     }
   } catch (err) {
     res.json({ status: "Fail", message: err.message });
